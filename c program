@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+struct team {
+    int teamID;
+    double totalGoals;
+    int totalPoints;
+};
+
+void initializeTeam(struct team Teams[], int numTeam) {
+    int teamData[10][3] = {
+        {1, 55, 11},
+        {2, 35, 7},
+        {3, 50, 10},
+        {4, 45, 9},
+        {4, 60, 12},
+        {5, 40, 8},
+        {6, 20, 4},
+        {7, 25, 5},
+        {8, 35, 7},
+        {9, 55, 11},
+    };
+
+    for (int i = 0; i < numTeam; ++i) {
+        Teams[i].teamID = teamData[i][0];
+        Teams[i].totalGoals = teamData[i][1];
+        Teams[i].totalPoints = teamData[i][2];
+    }
+}
+
+int main() {
+    struct team teamArray[10];
+    initializeTeam(teamArray, 10);
+    printf("Team Data:\n");
+    for (int i = 0; i < 10; ++i) {
+        printf("team %d:\n", teamArray[i].teamID);
+        printf("total Goals: $%.2lf\n", teamArray[i].totalGoals);
+        printf("team Points: %d\n", teamArray[i].totalPoints);
+        printf("\n");
+    
+    }
+
+    return 0;
+}
